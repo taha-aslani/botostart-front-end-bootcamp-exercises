@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Finder</title>
+  </head>
+  <body>
+    Please open console box in developer tools
+
+    <script>
+      const isPrime = (num) => {
+        if (typeof num !== 'number') return 'invalid arguments';
+        if (num <= 1) return false;
+
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+
+        return true;
+      };
+
+      console.log(isPrime(2));
+      console.log(isPrime(6));
+      console.log(isPrime('two'));
+    </script>
+  </body>
+</html>

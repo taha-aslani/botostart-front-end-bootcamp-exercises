@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  --box-width: calc(100vw - 800px);
+}
+
+body {
+  background: linear-gradient(to right, #50d53e, #185216);
+}
+
+.container {
+  display: flex;
+  margin: 90px auto;
+  width: calc(100vw - 300px);
+  flex-direction: column;
+  text-align: center;
+  border-radius: 16px;
+  font-family: Vazir, sans-serif;
+  height: 205px;
+  box-shadow: 0 0 53px 22px #0000005a;
+}
+
+.container h2 {
+  background-color: #11420d;
+  color: #d0f26d;
+  font-weight: 400;
+  font-size: 2rem;
+  padding: 5px 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.container p {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #246d1f;
+  padding: 60px 0;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.polygon1 {
+    width: var(--box-width);
+    height: var(--box-width);
+    background: linear-gradient(to right, #1E601B, #1A224F00);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: -35%;
+}
+
+.polygon2 {
+    width: var(--box-width);
+    height: var(--box-width);
+    background: linear-gradient(to right, #000209, #1A224F00);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 60%;
+    left: -40%;
+}
+
+.polygon3 {
+    width: var(--box-width);
+    height: var(--box-width);
+    background: linear-gradient(to right, #000000, #141D3F00);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 65%;
+    left: -50%;
+}

@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iranian Numbers Fix</title>
+  </head>
+  <body>
+    <textarea name="numbers" id="numbers">
+["+989393676765", "+989393456123", "+989393455465", "+989393456722", "+989393456765"]</textarea
+    ><br /><br />
+    <button id="render">Render</button><br /><br />
+    <div id="container"></div>
+
+    <script>
+      const textarea = document.getElementById('numbers');
+      const container = document.getElementById('container');
+      const renderButton = document.getElementById('render');
+
+      renderButton.addEventListener('click', () => {
+        let numbers;
+        try {
+          numbers = JSON.parse(textarea.value.trim());
+        } catch (e) {
+          return (container.innerHTML = 'INVALID ARRAY\n' + e);
+        }
+
+        if (!numbers) return (container.innerHTML = 'VALID NUMBERS ONLY');
+        if (numbers.length % 2 === 0)
+          return (container.innerHTML = 'EVEN NUMBERS ONLY');
+
+        const middleElementIndex = (numbers.length - 1) / 2;
+        const middleElement = numbers[middleElementIndex];
+
+        const formattedNumber = middleElement.replace('+98', '0');
+        container.innerHTML = formattedNumber;
+      });
+    </script>
+  </body>
+</html>

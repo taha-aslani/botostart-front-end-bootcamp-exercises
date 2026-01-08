@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    Please open console box in developer tools
+
+    <script>
+      const calculator = (firstNum, secondNum, operator) => {
+        switch (operator) {
+          case '+':
+            return firstNum + secondNum;
+            break;
+          case '-':
+            return firstNum - secondNum;
+            break;
+          case '*':
+            return firstNum * secondNum;
+            break;
+          case '/':
+            if (secondNum == 0) return 'invalid arguments';
+            return firstNum / secondNum;
+            break;
+          default:
+            return 'invalid arguments';
+            break;
+        }
+      };
+
+      console.log(calculator(2, 3, '+'));
+      console.log(calculator(2, 3, '-'));
+      console.log(calculator(2, 0, '/'));
+      console.log(calculator(2, 4, '*'));
+    </script>
+  </body>
+</html>

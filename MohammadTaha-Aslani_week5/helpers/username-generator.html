@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username Generator</title>
+</head>
+<body>
+    <input type="email" required id="email-input" placeholder="user@site.com"> <button id="generator-button">Generate</button>
+    <div id="value-shower" style="margin-top: 20px;"></div>
+
+
+    <script>
+        const email = document.getElementById("email-input");
+        const generatorButton = document.getElementById("generator-button");
+        const valueShower = document.getElementById("value-shower")
+
+        generatorButton.addEventListener("click", () => {
+            if (!email.value) return valueShower.innerHTML = "INPUT IS EMPTY";
+            
+            const emailSplitted = email.value.split("@");
+            if(emailSplitted.length > 2) return valueShower.innerHTML = "EMAIL IS INVALID";
+
+            valueShower.innerHTML = emailSplitted[0];
+        })
+    </script>
+</body>
+</html>
